@@ -1,30 +1,23 @@
 import {
-  Calendar,
-  Home,
-  Inbox,
-  LucideIcon,
-  Scissors,
-  Search,
-  Settings,
-} from "lucide-react";
-import { Italiana } from "next/font/google";
-import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import {
-  TooltipProvider,
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-} from "@radix-ui/react-tooltip";
+  CalendarDays,
+  Contact,
+  Home,
+  LucideIcon,
+  PhoneCall,
+  Scissors,
+  ScissorsLineDashed,
+} from "lucide-react";
+import { Italiana } from "next/font/google";
 
 interface MenuItem {
   title: string;
@@ -39,29 +32,24 @@ const italiana = Italiana({
 
 const items: MenuItem[] = [
   {
-    title: "Home",
-    url: "#",
-    icon: Home,
+    title: "Book now",
+    url: "/book-now",
+    icon: CalendarDays,
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "Products & Services",
+    url: "/products-and-services",
+    icon: ScissorsLineDashed,
   },
   {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
+    title: "About",
+    url: "/about",
+    icon: Contact,
   },
   {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
+    title: "Contact us",
+    url: "/book-now",
+    icon: PhoneCall,
   },
 ];
 
@@ -69,9 +57,9 @@ export function AppSidebar(): JSX.Element {
   return (
     <Sidebar variant="floating" collapsible="icon" className="bg-beige">
       <SidebarHeader>
-        <SidebarMenuButton asChild>
+        <SidebarMenuButton asChild tooltip="Home">
           <a href="/">
-            <Scissors />
+            <Scissors rotate={45} />
             <span className={`${italiana.className} text-lg`}>
               Richmond Hair Studio
             </span>
@@ -80,34 +68,29 @@ export function AppSidebar(): JSX.Element {
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenuItem key="home">
+              <SidebarMenuButton asChild tooltip={"Home"}>
+                <a href="/">
+                  <Home />
+                  <span>Home</span>
+                </a>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map(
                 (item: MenuItem): JSX.Element => (
                   <SidebarMenuItem key={item.title}>
-                    <TooltipProvider
-                      key={`tooltip-${item.title}`}
-                      disableHoverableContent
-                    >
-                      <Tooltip delayDuration={100}>
-                        <TooltipTrigger asChild>
-                          <SidebarMenuButton asChild>
-                            <a href={item.url}>
-                              <item.icon />
-                              <span>{item.title}</span>
-                            </a>
-                          </SidebarMenuButton>
-                        </TooltipTrigger>
-                        <TooltipContent
-                          align="start"
-                          alignOffset={2}
-                          side="right"
-                        >
-                          {item.title}
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
+                    <SidebarMenuButton asChild tooltip={item.title}>
+                      <a href={item.url}>
+                        <item.icon />
+                        <span>{item.title}</span>
+                      </a>
+                    </SidebarMenuButton>
                   </SidebarMenuItem>
                 ),
               )}
