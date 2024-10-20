@@ -1,10 +1,10 @@
+import { AboutUs } from "@/components/about-us";
+import { BookNow } from "@/components/book-now";
+import { Divider } from "@/components/divider";
+import { ProductsAndServices } from "@/components/products-and-services";
 import { Limelight } from "next/font/google";
 import Image from "next/image";
-import { AboutUs } from "./about-us";
-import { ProductsAndServices } from "./products-and-services";
-import { BookNow } from "./book-now";
 import Footer from "./footer";
-import { Divider } from "@/components/divider";
 
 const limelight = Limelight({
   weight: "400",
