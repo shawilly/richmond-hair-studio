@@ -18,7 +18,7 @@ export function BookNow(): JSX.Element {
       <div className="grid grid-cols-1 xl:grid-cols-2 w-full">
         <div className="flex flex-col text-lg">
           <h1
-            className={`${limelight.className} underline text-4xl font-black md:mb-8 text-center xl:text-left`}
+            className={`${limelight.className} underline text-4xl font-black mb-8 text-center xl:text-left`}
           >
             Book Now:
           </h1>
@@ -26,7 +26,7 @@ export function BookNow(): JSX.Element {
 
         <Link className="text-xl" href="tel:+6137224532">
           <Button
-            className="w-full bg-green text-white mb-8 md:mb-2"
+            className="w-full bg-green text-white mb-8 md:mb-2 mt-4 md:mt-0"
             type="submit"
           >
             Phone: <span className="underline">(613)-722-4532</span>
