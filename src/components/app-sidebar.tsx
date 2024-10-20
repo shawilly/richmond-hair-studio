@@ -33,22 +33,22 @@ const italiana = Italiana({
 const items: MenuItem[] = [
   {
     title: "Book now",
-    url: "/book-now",
+    url: "#book-now",
     icon: CalendarDays,
   },
   {
     title: "Products & Services",
-    url: "/products-and-services",
+    url: "#products-and-services",
     icon: ScissorsLineDashed,
   },
   {
     title: "About",
-    url: "/about",
+    url: "#about-us",
     icon: Contact,
   },
   {
     title: "Contact us",
-    url: "/book-now",
+    url: "#book-now",
     icon: PhoneCall,
   },
 ];
@@ -71,7 +71,7 @@ export function AppSidebar(): JSX.Element {
           <SidebarGroupContent>
             <SidebarMenuItem key="home">
               <SidebarMenuButton asChild tooltip={"Home"}>
-                <a href="/">
+                <a href="#">
                   <Home />
                   <span>Home</span>
                 </a>

@@ -6,9 +6,9 @@ const limelight = Limelight({
   subsets: ["latin"],
 });
 
-export default function ProductsAndServices(): JSX.Element {
+export function ProductsAndServices(): JSX.Element {
   return (
-    <div className="p-8 max-w-screen mx-auto flex-1 w-full md:mr-12">
+    <div className="p-8 border-brown border-4 rounded-xl border-double max-w-screen mx-auto flex-1 w-full md:mr-12 mb-12">
       <h1
         className={`${limelight.className} text-4xl font-black mb-8 text-center md:text-left`}
       >

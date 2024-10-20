@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${verela.className} antialiased`}>
+      <body className={`${verela.className} antialiased m-4`}>
         <SidebarProvider>
           <AppSidebar />
           <SideBarTriggerButton />

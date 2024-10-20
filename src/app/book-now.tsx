@@ -8,11 +8,11 @@ const limelight = Limelight({
   subsets: ["latin"],
 });
 
-export default function BookNow(): JSX.Element {
+export function BookNow(): JSX.Element {
   const apiKey = config.googleMapsApiKey();
 
   return (
-    <div className="p-8 max-w-screen mx-auto flex-1 w-full xl:mr-12">
+    <div className="p-8 max-w-screen mx-auto flex-1 w-full xl:mr-12 border-brown border-4 rounded-xl border-double">
       <h1
         className={`${limelight.className} text-4xl font-black mb-8 text-center xl:text-left`}
       >
