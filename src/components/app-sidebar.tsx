@@ -17,7 +17,8 @@ import {
   Scissors,
   ScissorsLineDashed,
 } from "lucide-react";
-import { Italiana } from "next/font/google";
+import { Limelight } from "next/font/google";
+import Link from "next/link";
 
 interface MenuItem {
   title: string;
@@ -25,7 +26,7 @@ interface MenuItem {
   icon: LucideIcon;
 }
 
-const italiana = Italiana({
+const limelight = Limelight({
   weight: "400",
   subsets: ["latin"],
 });
@@ -58,12 +59,12 @@ export function AppSidebar(): JSX.Element {
     <Sidebar variant="floating" collapsible="icon" className="bg-beige">
       <SidebarHeader>
         <SidebarMenuButton asChild tooltip="Home">
-          <a href="/">
+          <Link href="/">
             <Scissors rotate={45} />
-            <span className={`${italiana.className} text-lg`}>
+            <span className={`${limelight.className} text-md`}>
               Richmond Hair Studio
             </span>
-          </a>
+          </Link>
         </SidebarMenuButton>
       </SidebarHeader>
       <SidebarContent>
@@ -71,10 +72,10 @@ export function AppSidebar(): JSX.Element {
           <SidebarGroupContent>
             <SidebarMenuItem key="home">
               <SidebarMenuButton asChild tooltip={"Home"}>
-                <a href="#">
+                <Link href="#">
                   <Home />
                   <span>Home</span>
-                </a>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarGroupContent>
@@ -86,10 +87,10 @@ export function AppSidebar(): JSX.Element {
                 (item: MenuItem): JSX.Element => (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild tooltip={item.title}>
-                      <a href={item.url}>
+                      <Link href={item.url}>
                         <item.icon />
                         <span>{item.title}</span>
-                      </a>
+                      </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ),

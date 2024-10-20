@@ -1,5 +1,4 @@
 import { AppSidebar } from "@/components/app-sidebar";
-import { SideBarTriggerButton } from "@/components/sidebar-trigger-button";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import type { Metadata } from "next";
 import { Varela } from "next/font/google";
@@ -19,13 +18,12 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>): JSX.Element {
   return (
     <html lang="en">
       <body className={`${verela.className} antialiased m-4`}>
         <SidebarProvider>
           <AppSidebar />
-          <SideBarTriggerButton />
           {children}
         </SidebarProvider>
       </body>

@@ -26,7 +26,7 @@ const testimonials = new Map<string, { name: string; score: number }>([
 
 export function AboutUs(): JSX.Element {
   return (
-    <div className="bg-green rounded-xl text-beige p-8 mt-12 max-w-screen mx-auto flex-1 w-full xl:mr-12">
+    <div className="bg-green border-beige shadow-md shadow-neutral-300 border-4 border-double rounded-xl text-beige p-8 mt-12 max-w-screen mx-auto flex-1 w-full xl:mr-12">
       <div className="grid grid-cols-1 max-w-screen xl:w-full h-[60%] gap-8 mx-auto xl:gap-24 xl:mr-12 xl:grid-cols-2">
         <div className="flex col-span-1 flex-col items-start justify-start">
           <h1
@@ -79,7 +79,7 @@ export function AboutUs(): JSX.Element {
           <Image
             alt=""
             src="/hair-dryer.jpg"
-            className="rounded-lg shadow-md shadow-neutral-300"
+            className="rounded-lg shadow-md shadow-salmon"
             height={500}
             width={500}
           />

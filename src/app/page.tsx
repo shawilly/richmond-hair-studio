@@ -2,8 +2,10 @@ import { AboutUs } from "@/components/about-us";
 import { BookNow } from "@/components/book-now";
 import { Divider } from "@/components/divider";
 import { ProductsAndServices } from "@/components/products-and-services";
+import { SideBarTriggerButton } from "@/components/sidebar-trigger-button";
+import { Button } from "@/components/ui/button";
 import { Limelight } from "next/font/google";
-import Image from "next/image";
+import Link from "next/link";
 import Footer from "./footer";
 
 const limelight = Limelight({
@@ -14,21 +16,24 @@ const limelight = Limelight({
 export default function Home(): JSX.Element {
   return (
     <div className="flex flex-col justify-center items-center w-full">
+      <SideBarTriggerButton />
       {/* Hero */}
-      <section className="p-8 max-w-screen min-h-screen mx-auto flex-1 w-full">
+      <section
+        className={`bg-[url('/alternating-arrowhead.svg')] p-8 min-w-screen min-h-screen mx-auto flex flex-col items-center justify-center`}
+      >
         <h1
-          className={`${limelight.className} text-4xl font-black mb-8 text-center`}
+          className={`${limelight.className} text-5xl font-extrabold mb-4 text-center text-blue`}
         >
           Richmond Hair Studio
         </h1>
-
-        <Image
-          alt=""
-          src="/curling-iron.jpg"
-          className="rounded-lg mb-8 shadow-md shadow-neutral-300 hidden md:flex"
-          height={200}
-          width={400}
-        />
+        <p className="text-lg font-semibold text-center text-blue mb-6">
+          Crafting Timeless Style in Ottawa Since 1923.
+        </p>
+        <Link href="#book-now">
+          <Button className="w-full bg-green text-white" type="submit">
+            Book Now
+          </Button>
+        </Link>
       </section>
 
       <section id="about-us" className="min-h-screen">
@@ -40,7 +45,7 @@ export default function Home(): JSX.Element {
         />
       </section>
 
-      <section id="products-and-services" className="min-h-screen">
+      <section id="products-and-services" className="min-h-screen min-w-full">
         <ProductsAndServices />
         <Divider
           className="flex w-full p-8 justify-center"
@@ -49,10 +54,11 @@ export default function Home(): JSX.Element {
         />
       </section>
 
-      <section id="book-now" className="min-h-screen">
+      <section id="book-now">
         <BookNow />
-        <Footer />
       </section>
+
+      <Footer />
     </div>
   );
 }

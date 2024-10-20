@@ -1,21 +1,19 @@
 "use client";
 
-import { Menu } from "lucide-react";
-import { Button } from "./ui/button";
-import { useSidebar } from "./ui/sidebar";
 import clsx from "clsx";
+import { Menu } from "lucide-react";
+import { useSidebar } from "./ui/sidebar";
 
 export function SideBarTriggerButton(): JSX.Element {
   const { toggleSidebar, isMobile } = useSidebar();
 
   return (
-    <Button
+    <Menu
       onClick={toggleSidebar}
-      variant="ghost"
-      className={clsx("text-orange", isMobile ? "fixed top-4" : "")}
-      size="icon"
-    >
-      <Menu className="w-64" />
-    </Button>
+      className={clsx(
+        "h-9 w-9 fixed top-2 shadow-md shadow-neutral-400 left-2 bg-offwhite p-1 text-blue rounded hover:bg-yellow",
+        isMobile ? "left-2" : "left-[264px]",
+      )}
+    />
   );
 }
