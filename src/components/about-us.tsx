@@ -15,7 +15,7 @@ const testimonials = new Map<string, { name: string; score: number }>([
     { name: "Joanne Johnson", score: 5 },
   ],
   [
-    "Excellent service kind and friendly staff.",
+    "Excellent service, kind and friendly staff.",
     { name: "Issy Plu", score: 5 },
   ],
   [
