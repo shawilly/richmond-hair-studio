@@ -59,7 +59,7 @@ export function AppSidebar(): JSX.Element {
     <Sidebar variant="floating" collapsible="icon" className="bg-beige">
       <SidebarHeader>
         <SidebarMenuButton asChild tooltip="Home">
-          <Link href="/">
+          <Link href="#home">
             <Scissors rotate={45} />
             <span className={`${limelight.className} text-md`}>
               Richmond Hair Studio
@@ -72,7 +72,7 @@ export function AppSidebar(): JSX.Element {
           <SidebarGroupContent>
             <SidebarMenuItem key="home">
               <SidebarMenuButton asChild tooltip={"Home"}>
-                <Link href="#">
+                <Link href="#home">
                   <Home />
                   <span>Home</span>
                 </Link>

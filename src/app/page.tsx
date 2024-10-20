@@ -17,8 +17,8 @@ export default function Home(): JSX.Element {
   return (
     <div className="flex flex-col justify-center items-center w-full">
       <SideBarTriggerButton />
-      {/* Hero */}
       <section
+        id="home"
         className={`bg-[url('/alternating-arrowhead.svg')] p-8 min-w-screen min-h-screen mx-auto flex flex-col items-center justify-center`}
       >
         <h1

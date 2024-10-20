@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>): JSX.Element {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body className={`${verela.className} antialiased m-4`}>
         <SidebarProvider>
           <AppSidebar />
