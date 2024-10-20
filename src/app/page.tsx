@@ -4,6 +4,7 @@ import { AboutUs } from "./about-us";
 import { ProductsAndServices } from "./products-and-services";
 import { BookNow } from "./book-now";
 import Footer from "./footer";
+import { Divider } from "@/components/divider";
 
 const limelight = Limelight({
   weight: "400",
@@ -32,16 +33,26 @@ export default function Home(): JSX.Element {
 
       <section id="about-us" className="min-h-screen">
         <AboutUs />
+        <Divider
+          className="flex w-full p-8 justify-center"
+          height={12}
+          width={800}
+        />
       </section>
 
-      <section id="products-and-services" className="pt-12 min-h-screen">
+      <section id="products-and-services" className="min-h-screen">
         <ProductsAndServices />
+        <Divider
+          className="flex w-full p-8 justify-center"
+          height={12}
+          width={800}
+        />
       </section>
 
-      <section id="book-now" className="mt-12">
+      <section id="book-now" className="min-h-screen">
         <BookNow />
+        <Footer />
       </section>
-      <Footer />
     </div>
   );
 }
