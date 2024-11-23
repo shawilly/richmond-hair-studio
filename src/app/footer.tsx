@@ -16,7 +16,9 @@ const Footer = (): JSX.Element => {
           <span className={`${PicNic.className} mr-1 text-2xl`}>shawilly</span>
         </p>
       </Link>
-      <span>Copyright &copy; 2024 Shawilly. All rights reserved.</span>
+      <span className="text-center">
+        Copyright &copy; 2024 Shawilly. All rights reserved.
+      </span>
     </footer>
   );
 };

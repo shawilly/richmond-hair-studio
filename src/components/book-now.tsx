@@ -15,7 +15,7 @@ export function BookNow(): JSX.Element {
 
   return (
     <SectionCard>
-      <div className="grid grid-cols-1 xl:grid-cols-2 w-full">
+      <div className="grid grid-cols-1 xl:grid-cols-2 w-full max-w-screen">
         <div className="flex flex-col text-lg">
           <h1
             className={`${limelight.className} underline text-4xl font-black mb-8 text-center xl:text-left`}
@@ -34,7 +34,7 @@ export function BookNow(): JSX.Element {
         </Link>
       </div>
 
-      <div className="min-w-[350px] md:min-w-[500px] rounded-lg overflow-hidden shadow-md shadow-neutral-300">
+      <div className="min-w-[325px] md:min-w-[500px] rounded-lg overflow-hidden shadow-md shadow-neutral-300">
         <GoogleMapsEmbed
           apiKey={apiKey}
           mode="place"

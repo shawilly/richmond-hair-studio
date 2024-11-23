@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Sidebar,
   SidebarContent,
@@ -13,7 +15,6 @@ import {
   Contact,
   Home,
   LucideIcon,
-  PhoneCall,
   Scissors,
   ScissorsLineDashed,
 } from "lucide-react";
@@ -33,9 +34,9 @@ const limelight = Limelight({
 
 const items: MenuItem[] = [
   {
-    title: "Book now",
-    url: "#book-now",
-    icon: CalendarDays,
+    title: "About",
+    url: "#about-us",
+    icon: Contact,
   },
   {
     title: "Products & Services",
@@ -43,14 +44,9 @@ const items: MenuItem[] = [
     icon: ScissorsLineDashed,
   },
   {
-    title: "About",
-    url: "#about-us",
-    icon: Contact,
-  },
-  {
-    title: "Contact us",
+    title: "Book now",
     url: "#book-now",
-    icon: PhoneCall,
+    icon: CalendarDays,
   },
 ];
 
@@ -58,7 +54,7 @@ export function AppSidebar(): JSX.Element {
   return (
     <Sidebar variant="floating" collapsible="icon" className="bg-beige">
       <SidebarHeader>
-        <SidebarMenuButton asChild tooltip="Home">
+        <SidebarMenuButton asChild>
           <Link href="#home">
             <Scissors rotate={45} />
             <span className={`${limelight.className} text-md`}>
@@ -70,14 +66,16 @@ export function AppSidebar(): JSX.Element {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>
-            <SidebarMenuItem key="home">
-              <SidebarMenuButton asChild tooltip={"Home"}>
-                <Link href="#home">
-                  <Home />
-                  <span>Home</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
+            <SidebarMenu>
+              <SidebarMenuItem key="home">
+                <SidebarMenuButton asChild tooltip={"Home"}>
+                  <Link href="#home">
+                    <Home />
+                    <span>Home</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
         <SidebarGroup>

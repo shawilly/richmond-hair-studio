@@ -2,7 +2,6 @@ import { AboutUs } from "@/components/about-us";
 import { BookNow } from "@/components/book-now";
 import { Divider } from "@/components/divider";
 import { ProductsAndServices } from "@/components/products-and-services";
-import { SideBarTriggerButton } from "@/components/sidebar-trigger-button";
 import { Button } from "@/components/ui/button";
 import { Limelight } from "next/font/google";
 import Link from "next/link";
@@ -16,7 +15,6 @@ const limelight = Limelight({
 export default function Home(): JSX.Element {
   return (
     <div className="flex flex-col justify-center items-center w-full">
-      <SideBarTriggerButton />
       <section
         id="home"
         className={`bg-[url('/alternating-arrowhead.svg')] p-8 min-w-screen min-h-screen mx-auto flex flex-col items-center justify-center`}
@@ -30,7 +28,11 @@ export default function Home(): JSX.Element {
           Crafting Timeless Style in Ottawa Since 1923.
         </p>
         <Link href="#book-now">
-          <Button className="w-full bg-green text-white" type="submit">
+          <Button
+            size="lg"
+            className="w-full bg-green text-2xl text-white"
+            type="submit"
+          >
             Book Now
           </Button>
         </Link>
